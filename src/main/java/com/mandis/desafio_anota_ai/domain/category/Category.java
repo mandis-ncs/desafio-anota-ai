@@ -15,4 +15,10 @@ public class Category {
     private String title;
     private String description;
     private String ownerId;
+
+    public Category(CategoryDto categoryDto) {
+        this.title = categoryDto.title();
+        this.description = categoryDto.description();
+        this.ownerId = categoryDto.ownerId();
+    }
 }

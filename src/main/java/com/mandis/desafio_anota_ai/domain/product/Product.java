@@ -1,4 +1,4 @@
-package com.mandis.desafio_anota_ai.domain.category.product;
+package com.mandis.desafio_anota_ai.domain.product;
 
 import com.mandis.desafio_anota_ai.domain.category.Category;
 import lombok.Getter;
@@ -18,4 +18,11 @@ public class Product {
     private String ownerId;
     private Integer price; //will multiply decimal by 100 before saving on database
     private Category category;
+
+    public Product(ProductDto productDto) {
+        this.description = productDto.description();
+        this.ownerId = productDto.ownerId();
+        this.price = productDto.price();
+        this.title = productDto.title();
+    }
 }
